@@ -4,10 +4,10 @@
             <label for="app_name" class="text-6xl font-bold" typingAnimation [duration]="0.5">Users App</label>
             <small class="font-bold" typingAnimation [duration]="0.5">Maids.cc</small>
         </div>
-        <span class="p-input-icon-left w-full">
-            <i class="pi pi-search"></i>
-            <input type="text" class=" w-full" pInputText [(ngModel)]="seachValue " />
-        </span>
+        <div class="w-full">
+            <app-instant-search (onValidSearch)="onSearchChange($event)"/>
+        </div>
     </header>
+    <!-- using *isBrowser to render only in browser skip (hydration) error -->
     <app-users-table/>
 </div>

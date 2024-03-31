@@ -1,0 +1,4 @@
+<span class="p-input-icon-left w-full">
+    <i class="pi" [ngClass]="{ 'pi-search': !isLoading, 'pi-spin pi-spinner': isLoading }"></i>
+    <input type="text" class=" w-full" aria-labelledby="users-search" pInputText [ngModel]="userInput" placeholder="Search by user id" (ngModelChange)="onSearchChange($event)"/>
+</span>

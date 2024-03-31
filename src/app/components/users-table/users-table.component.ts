@@ -17,7 +17,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 export class UsersTableComponent {
   userService = inject(UserService);
   appState = inject(AppStore);
-  isLoading = false;
+  isLoading = true;
   users: IUser[] = [];
   totalUsers = 0;
   per_page = 6;
@@ -29,20 +29,22 @@ export class UsersTableComponent {
   }
 
   private loadUsers(page: number) {
-    this.isLoading = true;
     const cachedUsers = this.appState.paginatedUsers$().get(page);
     if (!!cachedUsers) {
-      this.users = cachedUsers;
-      this.totalUsers = this.appState.totlaUsers$();
-      this.isLoading = false;
+      // using setTimeout 0 to just make sure that we wait for the state to be hydrated
+      setTimeout(() => {
+        this.users = cachedUsers;
+        this.totalUsers = this.appState.totlaUsers$();
+        this.isLoading = false;
+      }, 0);
+
       return;
     }
-    
+
     this.userService.getUsers(page).subscribe((res) => {
       this.users = res.data;
       this.totalUsers = res.total;
       this.per_page = res.per_page;
-      this.appState.cachePaginatedUsers(page, this.users, this.totalUsers);
       this.isLoading = false;
     });
   }

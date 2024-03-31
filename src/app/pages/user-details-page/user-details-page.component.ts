@@ -38,7 +38,6 @@ export class UserDetailsPageComponent implements OnInit {
 
     this.userService.getUser(id).subscribe((res) => {
       this.user = res.data;
-      this.appState.cacheUser(this.user!);
       this.isLoading = false;
     });
   }
