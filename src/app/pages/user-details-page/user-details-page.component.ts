@@ -5,11 +5,13 @@ import { IUser } from '../../interfaces';
 import { AvatarModule } from 'primeng/avatar';
 import { AppStore } from '../../stores';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { FadeInAnimationDirective } from '../../animations/directives/fade-in-animation.directive';
+import { TypingAnimationDirective } from '../../animations/directives/typing-animation.directive';
 
 @Component({
   selector: 'app-user-details-page',
   standalone: true,
-  imports: [AvatarModule, ProgressSpinnerModule, RouterLink],
+  imports: [AvatarModule, ProgressSpinnerModule, RouterLink, FadeInAnimationDirective, TypingAnimationDirective],
   templateUrl: './user-details-page.component.html',
   styleUrl: './user-details-page.component.scss',
 })

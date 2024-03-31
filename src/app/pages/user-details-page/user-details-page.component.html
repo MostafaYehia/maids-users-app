@@ -1,5 +1,5 @@
-<div class="flex flex-col space-y-5 justify-center bg-blue-600 w-full h-screen p-20">
-
+<div
+    class="flex flex-col space-y-5 justify-center bg-gradient-to-tr from-indigo-500 to-indigo-700 w-full h-screen p-20">
     <div class="h-10 w-full text-white">
         <a [routerLink]="['/']">
             <div class="cursor-pointer">
@@ -12,7 +12,8 @@
         @if(isLoading) {
         <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
         } @else {
-        <p-avatar [image]="user?.avatar" styleClass="mr-2 w-44 h-44" size="xlarge" shape="circle"></p-avatar>
+        <p-avatar fadeInAnimation [duration]="2" [image]="user?.avatar" styleClass="mr-2 w-44 h-44" size="xlarge"
+            shape="circle"></p-avatar>
         }
         <div class="flex flex-col items-center space-y-2">
             <label for="user_first_name" class="block font-bold text-4xl">{{user?.first_name}}
