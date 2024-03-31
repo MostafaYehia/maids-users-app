@@ -1,8 +1,8 @@
-<div class="flex space-x-2 items-center bg-gray-200 py-5 px-12 min-w-52 w-96 rounded-lg">
-    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" styleClass="mr-2"
+<div class="flex space-x-2 items-center bg-gray-200 py-5 px-12 min-w-52  rounded-lg hover:bg-blue-800 hover:text-white">
+    <p-avatar [image]="user?.avatar" styleClass="mr-2"
         size="xlarge" shape="circle"></p-avatar>
     <div>
-        <label for="user_first_name" class="block">Mostafa</label>
-        <label for="user_last_name" class="block">Yehia</label>
+        <label for="user_first_name" class="block font-bold text-2xl">{{user?.first_name}}</label>
+        <label for="user_last_name" class="block font-bold">{{user?.last_name}}</label>
     </div>
 </div>

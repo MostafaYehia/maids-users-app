@@ -1,0 +1,13 @@
+<p-table [value]="users" [totalRecords]="totalUsers" [paginator]="true" [rows]="per_page" [loading]="isLoading" [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }" [lazy]="true" (onLazyLoad)="loadUsersLazy($event)"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+    <ng-template pTemplate="body" let-user>
+        <tr>
+            <td>
+                <a [routerLink]="['/users', user.id]" class="cursor-pointer">
+                    <app-user-card  [user]="user" />
+                </a>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

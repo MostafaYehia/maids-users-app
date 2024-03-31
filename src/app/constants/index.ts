@@ -8,10 +8,6 @@ export const APP_NAV = {
 };
 
 export const API_ENDPOINTS = {
-  LOGIN: `${API_URL}/auth/login`,
-  SIGNUP: `${API_URL}/auth/signup`,
+  USERS: `${API_URL}/users?page=:page`,
+  USER_DETAILS: `${API_URL}/users/:id`,
 };
-
-export enum LocalStorageKeys {
-  APP_STATE = 'appState.cache',
-}

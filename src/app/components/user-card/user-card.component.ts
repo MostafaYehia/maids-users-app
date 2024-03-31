@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
 import { CardModule } from 'primeng/card';
+import { IUser } from '../../interfaces';
 
 @Component({
   selector: 'app-user-card',
@@ -9,4 +10,6 @@ import { CardModule } from 'primeng/card';
   templateUrl: './user-card.component.html',
   styleUrl: './user-card.component.scss',
 })
-export class UserCardComponent {}
+export class UserCardComponent {
+  @Input({ required: true }) user: IUser | undefined;
+}

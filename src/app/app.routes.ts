@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { APP_NAV } from './constants';
 
 export const routes: Routes = [
   {
@@ -9,7 +10,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'users/:id',
+    path: APP_NAV.USER_DETAILS,
     loadComponent: () =>
       import('./pages/user-details-page/user-details-page.component').then(
         (m) => m.UserDetailsPageComponent

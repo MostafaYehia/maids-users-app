@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,8 +12,8 @@ import { CardModule } from 'primeng/card';
     RouterOutlet,
     ButtonModule,
     InputTextModule,
-    CardModule,
     FormsModule,
+    ToastModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
